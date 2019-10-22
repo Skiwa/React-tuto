@@ -253,11 +253,11 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
 ## Afficher une classe en fonction de l'état
 
 - `Dans PortraitAdversaire.js:render()`
-- Ajouter la classe `border-red` si l'état aEteProvoc est vrai : 
+- Ajouter la classe `border-red` à la div principale si l'état aEteProvoc est vrai : 
 
 ```jsx
     <div className={this.state.aEteProvoc ? 'border-red' : ''}>
-        [contenu]
+        //contenu
     </div>
 ```
 
