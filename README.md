@@ -3,7 +3,7 @@ Tutoriel React pour le cours d'IHM - MIASHS M2 2019-2020
 
 ## Présentation
 
-Le tutoriel consiste en la création d'une application web utilisant React.js comme librairie JavaScript.
+Le tutoriel consiste en la création d'une application web utilisant [React.js](https://reactjs.org/) comme librairie JavaScript.
 L'application utilise également le framework CSS [Materialize](https://materializecss.com/) pour le design.
 
 ## Prérequis
@@ -72,7 +72,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
     - A la fin du fichier, ajouter `export default App` pour rendre le composant accessible
     
 ## Définir le point d'entrée
-- Dans `index.html` définir le point d'entrée avec une balise 
+- Dans `index.html` définir le point d'entrée avec une balise :
     ```html 
         <div id="root"></div>
     ```
@@ -83,8 +83,9 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
     ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
+# Créer les adversaires
 
-# Créer un composant portraitAdversaire
+## Créer un composant portraitAdversaire
 - Comme App, créer un composant portraitAdversaire
 - Dans sa méthode `render()`, lui faire afficher des futures propriétés sous la forme : 
 ```jsx
@@ -123,13 +124,13 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
                         sports: ['MMA', 'Krav Maga', 'Karaté']
             }
         ```
-    - Passer la variable `adversaire` à l'élément `<PortraitAdversaire/>`.
+    - Passer la variable `adversaire` à l'élément `<PortraitAdversaire/>` :
     ```jsx
         <portraitAdversaire adversaire={adversaire}/>
     ```
 
 - Dans `PortraitAdversaire.js:render()` :
-    - Afficher les informations passées dans les balises `li`. 
+    - Afficher les informations passées dans les balises `li` : 
 
     ```jsx
         <div>
@@ -159,10 +160,12 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
 ```
 
 >Pour chaque sport, on va créer un élément `li` dans la liste
->Pour faire ça, on utilise la fonction map.
->En React, chaque élément de map() doit avoir un id, pour faire ça, on lui passe l'index actuel avec l'attribut `key`
 
-- On crée la boucle dans la balise `ol`
+>Pour faire ça, on utilise la fonction map.
+
+>En React, chaque élément de map() doit avoir un id donc on lui passe l'index actuel avec l'attribut `key`
+
+- On crée la boucle dans la balise `ol` :
 ```jsx
     <li>Sports :
         <ol>
@@ -218,4 +221,62 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
             ]
         ```
 
-    - Créer un composant `<PortraitAdversaire/>` pour chaque adversaire
+    - Créer un composant `<PortraitAdversaire/>` pour chaque adversaire :
+
+    ```jsx
+        {adversaires.map((adversaire,index)=>{
+            return(<PortraitAdversaire adversaire={adversaire} key={index}/>);
+        })}
+    ```
+    
+
+
+# Gérer les états
+
+## Définir un état aEteProvoc
+
+> On veut fixer un état aEteProvoc = false par défault à un composant `portraitAdversaire`
+> Quand on fixe un état à l'initialisation d'un composant, on doit lui créer un constructeur et lui passer les props : 
+
+```js
+    //Constructeur
+    constructor(props){
+        super(props);
+
+            //Fixe un état aEteProvoc par défaut
+            this.state = {
+                aEteProvoc: false
+            }
+        }
+```
+
+## Afficher une classe en fonction de l'état
+
+- `Dans PortraitAdversaire.js:render()`
+- Ajouter la classe `border-red` si l'état aEteProvoc est vrai : 
+
+```jsx
+    <div className={this.state.aEteProvoc ? 'border-red' : ''}>
+        [contenu]
+    </div>
+```
+
+## Changer l'état au clic sur un bouton
+
+- Créer une fonction `handleProvoc()` qui changera l'état `aEteProvoc` à vrai
+```js
+    handleProvoc(){
+        this.setState({aEteProvoc: true});
+    }
+```
+
+- Créer un évènement qui appelera la fonction `handleProvoc()` au clic sur le bouton de provocation : 
+
+```jsx
+    <button onClick={()=>{this.handleProvoc()}}>Provoquer {this.props.adversaire.prenom}</button>
+```
+
+
+# [Optionnel] Tout mettre en forme graphiquement
+
+- Remplacer le retour la fonction render() par [ce code](https://gist.github.com/Skiwa/2390a4edf2d20ef4713467255344a317). L'aspect fonctionnel est identique.
