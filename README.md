@@ -4,7 +4,7 @@ Tutoriel React pour le cours d'IHM - MIASHS M2 2019-2020
 ## Présentation
 
 Le tutoriel consiste en la création d'une application web utilisant React.js comme librairie JavaScript.
-L'application utilise également le framework CSS [Materialize](https://materializecss.com/) pour un design propre.
+L'application utilise également le framework CSS [Materialize](https://materializecss.com/) pour le design.
 
 ## Prérequis
 
@@ -72,7 +72,10 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
     - A la fin du fichier, ajouter `export default App` pour rendre le composant accessible
     
 ## Définir le point d'entrée
-- Dans `index.html` définir le point d'entrée avec ```<div id="root"></div>```
+- Dans `index.html` définir le point d'entrée avec une balise 
+    ```html 
+        <div id="root"></div>
+    ```
 
 ## Définir App comme point d'entrée
 - Dans `index.js`, créer un composant App à l'emplacement du point d'entrée : (Ne pas oublier d'importer App)
@@ -120,13 +123,28 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
                         sports: ['MMA', 'Krav Maga', 'Karaté']
             }
         ```
-    - Passer la variable `adversaire` à l'élément `<PortraitAdversaire/>`. Ex : `<Composant variableDuComposant={variablePassée}/>`
+    - Passer la variable `adversaire` à l'élément `<PortraitAdversaire/>`.
+    ```jsx
+        <portraitAdversaire adversaire={adversaire}/>
+    ```
 
 - Dans `PortraitAdversaire.js:render()` :
-    - Afficher les informations passées dans les balises `li`. Ex: `<li>{this.props.variableDuComposant}</li>`
-    - Afficher les images. La source de l'image est égale à `assets/img/` + `nomDeLaPhoto`
-    - Ajouter le prénom de l'adversaire dans le bouton de provocation. Ex `Provoquer Alexandre`
+    - Afficher les informations passées dans les balises `li`. 
 
+    ```jsx
+        <div>
+            <ul>
+                <img src={"assets/img/"+this.props.adversaire.photo}></img>
+                <li>Prénom : {this.props.adversaire.prenom}</li>
+                <li>Age : {this.props.adversaire.age}</li>
+                <li>Poids : {this.props.adversaire.poids}</li>
+                <li>Taille : {this.props.adversaire.taille}</li>
+                <li>Description : {this.props.adversaire.description}</li>
+                <li>Sports : {this.props.adversaire.sports} </li>
+            </ul>
+            <button>Provoquer {this.props.adversaire.prenom} </button>
+        </div>
+    ```
 
 ## Boucler sur les sports
     - On ne peut pas boucler automatiquement en React.
@@ -146,11 +164,13 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
     
     - On crée la boucle dans la balise `ol`
     ```jsx
-        <ol>
-            {this.props.adversaire.sports.map((sport,index) => {
-                return <li key={index}>{sport}</li>
-            })}
-        </ol>
+        <li>Sports :
+            <ol>
+                {this.props.adversaire.sports.map((sport,index) => {
+                    return <li key={index}>{sport}</li>
+                })}
+            </ol>
+        </li>
     ```
 
 
