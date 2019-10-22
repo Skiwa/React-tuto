@@ -1,0 +1,53 @@
+.inline-icon {
+  vertical-align: bottom;
+  font-size: 18px !important;
+}
+
+.btn-floating.btn-provoc {
+  height: 76px;
+  width: 76px;
+  bottom: -18px !important;
+  right: -18px !important;
+}
+
+.btn-floating.btn-provoc i {
+  line-height: 76px;
+  font-size: 2.6em;
+}
+.btn-floating.btn-provoc img {
+  height: 45px;
+  margin-top: 16px;
+  margin-right: 2px;
+  transition: all 0.25s;
+}
+
+.btn-floating.btn-provoc:hover img {
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+}
+
+.mouse-pointer {
+  cursor: pointer;
+}
+
+.z-index-max {
+  z-index: 99;
+}
+.z-index-medium {
+  z-index: 50;
+}
+.z-index-min {
+  z-index: 1;
+}
+
+.sports-reveal {
+  margin-top: 15px;
+}
+
+.star-valign {
+  vertical-align: -3px;
+}
+
+.rm-padding-bottom {
+  padding-bottom: 0 !important;
+}
