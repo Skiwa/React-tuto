@@ -30,7 +30,7 @@ UberFighter est une plateforme web permettant de participer à des combats de ru
 L'utilisateur peut provoquer un adversaire, qu'il pourra affronter si la provocation est mutuelle.
 
 
-Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage par rapport à notre profil.
+Le tutoriel va porter sur l'affichage des adversaires potentiels.
 
 
 
