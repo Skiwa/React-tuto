@@ -147,31 +147,31 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels et du filtrage 
     ```
 
 ## Boucler sur les sports
-    - On ne peut pas boucler automatiquement en React.
-    > Pour chaque sport, on va renvoyer un élément JSX
+- On ne peut pas boucler automatiquement en React.
+> Pour chaque sport, on va renvoyer un élément JSX
 
-    - Remplacer le contenu des Sports par une liste numérotée : 
+- Remplacer le contenu des Sports par une liste numérotée : 
 
-    ```jsx
-        <li>Sports :
-            <ol></ol>
-        </li>
-    ```
+```jsx
+    <li>Sports :
+        <ol></ol>
+    </li>
+```
 
-    >Pour chaque sport, on va créer un élément `li` dans la liste
-    >Pour faire ça, on utilise la fonction map.
-    >En React, chaque élément de map() doit avoir un id, pour faire ça, on lui passe l'index actuel avec l'attribut `key`
-    
-    - On crée la boucle dans la balise `ol`
-    ```jsx
-        <li>Sports :
-            <ol>
-                {this.props.adversaire.sports.map((sport,index) => {
-                    return <li key={index}>{sport}</li>
-                })}
-            </ol>
-        </li>
-    ```
+>Pour chaque sport, on va créer un élément `li` dans la liste
+>Pour faire ça, on utilise la fonction map.
+>En React, chaque élément de map() doit avoir un id, pour faire ça, on lui passe l'index actuel avec l'attribut `key`
+
+- On crée la boucle dans la balise `ol`
+```jsx
+    <li>Sports :
+        <ol>
+            {this.props.adversaire.sports.map((sport,index) => {
+                return <li key={index}>{sport}</li>
+            })}
+        </ol>
+    </li>
+```
 
 
 ## Ajouter d'autres combattants
