@@ -78,8 +78,12 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
     ```
 
 ## Définir App comme point d'entrée
-- Dans `index.js`, créer un composant App à l'emplacement du point d'entrée : (Ne pas oublier d'importer App)
+- Dans `index.js`, insérer un composant `<App/>` à l'emplacement du point d'entrée :
 ```js
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './components/app/App';
+
     ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
@@ -252,8 +256,8 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
 
 ## Afficher une classe en fonction de l'état
 
-- `Dans PortraitAdversaire.js:render()`
-- Ajouter la classe `border-red` à la div principale si l'état aEteProvoc est vrai : 
+- Dans `PortraitAdversaire.js:render()`
+- Ajouter la classe `border-red` à la div principale si l'état `aEteProvoc` est vrai : 
 
 ```jsx
     <div className={this.state.aEteProvoc ? 'border-red' : ''}>
