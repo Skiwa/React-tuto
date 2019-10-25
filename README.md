@@ -65,6 +65,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
                 <h2></h2>
                 <div className="divider"></div>
                 <br/>
+                <div className="row"></div>
             </div>
         ```
     - Dans la méthode `render()`, créer une variable `titre` qui sera égale à 'Uber Fighter'
@@ -110,7 +111,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
 ## Afficher un composant portraitAdversaire
 
 - Dans `App.js:render()` :  
-    - Ajouter un élément `<PortraitAdversaire/>` après le `<br/>`
+    - Ajouter un élément `<PortraitAdversaire/>` dans l'élément `<div className="row"></div>`
 
 
 ## Passer des informations à portraitAdversaire
