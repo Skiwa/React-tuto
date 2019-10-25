@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/app/App';
 
-// TODO: Le point d'entrée est à définir ici
+ReactDOM.render(<App />, document.getElementById('root'));
