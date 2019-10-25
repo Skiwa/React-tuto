@@ -92,7 +92,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
 
 ## Créer un composant portraitAdversaire
 - Comme App, créer un composant portraitAdversaire
-- Dans sa méthode `render()`, lui faire afficher des futures propriétés sous la forme : 
+- Dans sa méthode `render()`, préparer l'affichage de ses futures propriétés sous la forme : 
 ```jsx
     <div>
         <ul>
