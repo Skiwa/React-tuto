@@ -55,7 +55,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
 
 ## Créer un composant App qui sera le point d'entrée
 
-- Créer un fichier `App.js` dans un dossier `src/components/app/App.js`;
+- Créer un fichier `App.js` dans un nouveau dossier `src/components/app/App.js`;
 - Dans `App.js` : 
     - Ajouter les imports de React et ReactDOM
     - Créer une classe `App` qui hérite de `React.Component`
@@ -130,11 +130,11 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
         ```
     - Passer la variable `adversaire` à l'élément `<PortraitAdversaire/>` :
     ```jsx
-        <portraitAdversaire adversaire={adversaire}/>
+        <PortraitAdversaire adversaire={adversaire}/>
     ```
 
 - Dans `PortraitAdversaire.js:render()` :
-    - Afficher les informations passées dans les balises `li` : 
+    - Afficher les informations de la variable `adversaire` reçue dans les balises `li` : 
 
     ```jsx
         <div>
@@ -238,6 +238,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
 # Gérer les états
 
 ## Définir un état aEteProvoc
+- Dans `PortraitAdversaire.js`
 
 > On veut fixer un état aEteProvoc = false par défault à un composant `portraitAdversaire`
 > Quand on fixe un état à l'initialisation d'un composant, on doit lui créer un constructeur et lui passer les props : 
@@ -267,6 +268,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
 
 ## Changer l'état au clic sur un bouton
 
+- Dans `PortraitAdversaire.js`
 - Créer une fonction `handleProvoc()` qui changera l'état `aEteProvoc` à vrai
 ```js
     handleProvoc(){
