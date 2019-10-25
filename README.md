@@ -69,7 +69,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
             </div>
         ```
     - Dans la méthode `render()`, créer une variable `titre` qui sera égale à 'Uber Fighter'
-    - Insérer le titre dans le `h2`
+    - Insérer la variable `titre` dans le `h2`
     - A la fin du fichier, ajouter `export default App` pour rendre le composant accessible
     
 ## Définir le point d'entrée
