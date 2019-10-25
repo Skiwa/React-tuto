@@ -241,6 +241,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
 - Dans `PortraitAdversaire.js`
 
 > On veut fixer un état aEteProvoc = false par défault à un composant `portraitAdversaire`
+
 > Quand on fixe un état à l'initialisation d'un composant, on doit lui créer un constructeur et lui passer les props : 
 
 ```js
