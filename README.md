@@ -57,7 +57,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
 
 - Créer un fichier `App.js` dans un nouveau dossier `src/components/app/App.js`;
 - Dans `App.js` : 
-    - Ajouter les imports de React et ReactDOM
+    - Ajouter l'import de `React` depuis `'react'`
     - Créer une classe `App` qui hérite de `React.Component`
     - Ajouter une méthode `render()` qui retourne ces éléments JSX :
         ```jsx
