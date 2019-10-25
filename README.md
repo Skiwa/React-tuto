@@ -226,14 +226,7 @@ Le tutoriel va porter sur l'affichage des adversaires potentiels.
             ]
         ```
 
-    - Créer un composant `<PortraitAdversaire/>` pour chaque adversaire :
-
-    ```jsx
-        {adversaires.map((adversaire,index)=>{
-            return(<PortraitAdversaire adversaire={adversaire} key={index}/>);
-        })}
-    ```
-    
+    - Boucler sur les adversaires et créer un composant `<PortraitAdversaire/>` pour chacun.
 
 
 # Gérer les états
