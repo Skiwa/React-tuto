@@ -18,8 +18,6 @@ class PortraitAdversaire extends React.Component{
 
 
     render(){
-        let titre = "Uber Fighter";
-
         return (
         <div className={this.state.aEteProvoc ? 'border-red' : ''}>
             <ul>
